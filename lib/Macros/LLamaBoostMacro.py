@@ -1,13 +1,70 @@
 #Imports
 import tkinter as tk
 import pyautogui
+import json
+import os
 
 #Main Window
 Main = tk.Tk()
 Main.title("Boost Macro")
 Main.geometry("500x300")
 Main.resizable(False, False)
-Main.iconbitmap(r"C:\Users\mrlla\Documents\LLamaBoostMacro\lib\BasicBee.ico")
+
+#Config
+CONFIG_FILE = "config.json"
+
+def save_config():
+    config = {
+        "StingerOn": StingerOn.get(),
+        "GumOn": GumOn.get(),
+        "JellyOn": JellyOn.get(),
+        "CocoOn": CocoOn.get(),
+        "CloudOn": CloudOn.get(),
+        "GlitterOn": GlitterOn.get(),
+        "SW": SW.get(),
+        "SSlot": SSlot.get(),
+        "GSlot": GSlot.get(),
+        "JBSlot": JBSlot.get(),
+        "CSlot": CSlot.get(),
+        "CVSlot": CVSlot.get(),
+        "GLSlot": GLSlot.get()
+    }
+    with open(CONFIG_FILE, "w") as f:
+        json.dump(config, f, indent=4)
+    print("Config saved.")
+
+
+def load_config():
+    if not os.path.exists(CONFIG_FILE):
+        return
+    with open(CONFIG_FILE, "r") as f:
+        config = json.load(f)
+
+    # Set checkbox states
+    StingerOn.set(config.get("StingerOn", 0))
+    GumOn.set(config.get("GumOn", 0))
+    JellyOn.set(config.get("JellyOn", 0))
+    CocoOn.set(config.get("CocoOn", 0))
+    CloudOn.set(config.get("CloudOn", 0))
+    GlitterOn.set(config.get("GlitterOn", 0))
+    SW.set(config.get("SW", 0))
+
+    # Set slot entries
+    SSlot.delete(0, tk.END)
+    SSlot.insert(0, config.get("SSlot", ""))
+    GSlot.delete(0, tk.END)
+    GSlot.insert(0, config.get("GSlot", ""))
+    JBSlot.delete(0, tk.END)
+    JBSlot.insert(0, config.get("JBSlot", ""))
+    CSlot.delete(0, tk.END)
+    CSlot.insert(0, config.get("CSlot", ""))
+    CVSlot.delete(0, tk.END)
+    CVSlot.insert(0, config.get("CVSlot", ""))
+    GLSlot.delete(0, tk.END)
+    GLSlot.insert(0, config.get("GLSlot", ""))
+
+    print("Config loaded.")
+
 
 #Macros
 running = False
@@ -187,6 +244,13 @@ StartButton = tk.Button(text="Start", command=start)
 StartButton.place(x=200, y=265)
 StopButton = tk.Button(text="Stop", command=stop)
 StopButton.place(x=260, y=265)
+
+#Save/Load Buttons
+SaveButton = tk.Button(text="Save Config", command=save_config)
+SaveButton.place(x=340, y=265)
+LoadButton = tk.Button(text="Load Config", command=load_config)
+LoadButton.place(x=420, y=265)
+
 
 #Hotkeys
 Main.bind("<F1>", lambda event: start())
