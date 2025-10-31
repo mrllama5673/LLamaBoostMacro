@@ -3,7 +3,7 @@ import tkinter as tk
 import pyautogui
 
 #Main Window
-Main = tkinter.Tk()
+Main = tk.Tk()
 Main.title("Boost Macro")
 Main.geometry("500x300")
 Main.resizable(False, False)
@@ -14,11 +14,21 @@ Title.place(x=195, y=0)
 
 SText = tk.Label(Main, text="Stingers")
 SText.place(x=7, y=20)
+
 GText = tk.Label(Main, text="Gumdrops")
+GText.place(x=0, y=60)
+
 JBText = tk.Label(Main, text="Jelly Beans")
+JBText.place(x=2, y=100)
+
 CText = tk.Label(Main, text="Coconuts")
+CText.place(x=1, y=140)
+
 CVText = tk.Label(Main, text="Cloud Vials")
+CVText.place(x=0, y=180)
+
 GLText = tk.Label(Main, text="Glitter")
+GLText.place(x=10, y=220)
 
 #Checkboxes
 StingerOn = tk.IntVar()
@@ -27,6 +37,7 @@ SCheckbox.place(x=20, y=40)
 
 GumOn = tk.IntVar()
 GCheckbox = tk.Checkbutton(onvalue=1, offvalue=0, variable=GumOn)
+GCheckbox.place(x=20, y=80)
 
 JellyOn = tk.IntVar()
 JBCheckbox = tk.Checkbutton(onvalue=1, offvalue=0, variable=JellyOn)
@@ -50,11 +61,6 @@ StartButton = tk.Button(text="Start", command='start')
 StopButton = tk.Button(text="Stop", command=Main.quit)
 
 #Placing Assets
-GText.place(x=0, y=60)
-JBText.place(x=2, y=100)
-CText.place(x=1, y=140)
-CVText.place(x=0, y=180)
-GLText.place(x=10, y=220)
 GCheckbox.place(x=20, y=80)
 JBCheckbox.place(x=20, y=120)
 CCheckbox.place(x=20, y=160)
