@@ -251,7 +251,6 @@ SaveButton.place(x=340, y=265)
 LoadButton = tk.Button(text="Load Config", command=load_config)
 LoadButton.place(x=420, y=265)
 
-
 #Hotkeys
 Main.bind("<F1>", lambda event: start())
 Main.bind("<F3>", lambda event: stop())
