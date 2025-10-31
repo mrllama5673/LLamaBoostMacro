@@ -1,7 +1,6 @@
 #Imports
 import tkinter as tk
 import pyautogui
-import time
 
 #Main Window
 Main = tk.Tk()
