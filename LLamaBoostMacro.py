@@ -7,7 +7,6 @@ Main = tk.Tk()
 Main.title("Boost Macro")
 Main.geometry("500x300")
 Main.resizable(False, False)
-Main.iconbitmap(r".venv\Lib\BasicBee.ico")
 
 #Macros
 running = False
