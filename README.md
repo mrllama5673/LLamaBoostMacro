@@ -1,3 +1,2 @@
-Once you press the start button, the macro will wait 2 seconds so you can tab into roblox.
-The settings are unchangable when macro is started so you dont accidently change something.
+The settings are unchangeable when macro is started so you don't accidentally change something.
 Press F1 to start macro and F3 to stop.
