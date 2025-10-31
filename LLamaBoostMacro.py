@@ -41,38 +41,44 @@ GCheckbox.place(x=20, y=80)
 
 JellyOn = tk.IntVar()
 JBCheckbox = tk.Checkbutton(onvalue=1, offvalue=0, variable=JellyOn)
+JBCheckbox.place(x=20, y=120)
+
 CocoOn = tk.IntVar()
 CCheckbox = tk.Checkbutton(onvalue=1, offvalue=0, variable=CocoOn)
+CCheckbox.place(x=20, y=160)
+
 CloudOn = tk.IntVar()
 CVCheckbox = tk.Checkbutton(onvalue=1, offvalue=0, variable=CloudOn)
+CVCheckbox.place(x=20, y=200)
+
 GlitterOn = tk.IntVar()
 GLCheckbox = tk.Checkbutton(onvalue=1, offvalue=0, variable=GlitterOn)
+GLCheckbox.place(x=20, y=240)
 
 #Hotbar Slots
 SSlot = tk.Entry(width=2)
+SSlot.place(x=60, y=40)
+
 GSlot = tk.Entry(width=2)
+GSlot.place(x=60, y=80)
+
 JBSlot = tk.Entry(width=2)
+JBSlot.place(x=60, y=120)
+
 CSlot = tk.Entry(width=2)
+CSlot.place(x=60, y=160)
+
 CVSlot = tk.Entry(width=2)
+CVSlot.place(x=60, y=200)
+
 GLSlot = tk.Entry(width=2)
+GLSlot.place(x=60, y=240)
 
 #Start/Stop
 StartButton = tk.Button(text="Start", command='start')
-StopButton = tk.Button(text="Stop", command=Main.quit)
-
-#Placing Assets
-GCheckbox.place(x=20, y=80)
-JBCheckbox.place(x=20, y=120)
-CCheckbox.place(x=20, y=160)
-CVCheckbox.place(x=20, y=200)
-GLCheckbox.place(x=20, y=240)
-SSlot.place(x=60, y=40)
-GSlot.place(x=60, y=80)
-JBSlot.place(x=60, y=120)
-CSlot.place(x=60, y=160)
-CVSlot.place(x=60, y=200)
-GLSlot.place(x=60, y=240)
 StartButton.place(x=200, y=265)
+
+StopButton = tk.Button(text="Stop", command=Main.quit)
 StopButton.place(x=260, y=265)
 
 #Hotbar variables
