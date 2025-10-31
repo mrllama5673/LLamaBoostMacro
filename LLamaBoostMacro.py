@@ -21,7 +21,9 @@ def start():
         stinger()
         gumdrop()
         jellybean()
-
+        coconut()
+        cloud()
+        glitter()
 
 #Stop button
 def stop():
@@ -61,6 +63,39 @@ def jellybean():
             pyautogui.press(js)
             print("JELLYBEAN ACTIVATED")
         Main.after(30000, jellybean)
+
+#Coconuts
+def coconut():
+    if not running:
+        return
+    cs = CSlot.get()
+    if running:
+        if CocoOn.get():
+            pyautogui.press(cs)
+            print("COCONUT ACTIVATED")
+        Main.after(10000, coconut)
+
+#Cloud Vials
+def cloud():
+    if not running:
+        return
+    cvs = CVSlot.get()
+    if running:
+        if CloudOn.get():
+            pyautogui.press(cvs)
+            print("CLOUD ACTIVATED")
+        Main.after(60000, cloud)
+
+#Glitter
+def glitter():
+    if not running:
+        return
+    gs = GSlot.get()
+    if running:
+        if GlitterOn.get():
+            pyautogui.press(gs)
+            print("GLITTER ACTIVATED")
+        Main.after(150000, glitter)
 
 #Lables
 Title = tk.Label(Main, text="LLama Boost Macro")
