@@ -7,7 +7,7 @@ Main = tk.Tk()
 Main.title("Boost Macro")
 Main.geometry("500x300")
 Main.resizable(False, False)
-Main.iconbitmap("Lib\\BasicBee.ico")
+Main.iconbitmap(".venv\\Lib\\BasicBee.ico")
 
 #Macros
 running = False
@@ -30,7 +30,8 @@ def start():
         CVSlot.configure(state="disabled")
         GLSlot.configure(state="disabled")
         StartButton.configure(state="disabled")
-        Main.after(2000)
+        if SW.get():
+            Main.after(2000)
         print("MACRO STARTED")
         stinger()
         gumdrop()
@@ -139,6 +140,10 @@ CVText = tk.Label(Main, text="Cloud Vials")
 CVText.place(x=0, y=180)
 GLText = tk.Label(Main, text="Glitter")
 GLText.place(x=10, y=220)
+StartWaitText = tk.Label(Main, text="Wait 2 seconds before start?")
+StartWaitText.place(x=300, y=35)
+HotkeyText = tk.Label(Main, text="Start F1 Stop F3")
+HotkeyText.place(x=60, y=268)
 
 #Checkboxes
 StingerOn = tk.IntVar()
@@ -159,6 +164,9 @@ CVCheckbox.place(x=20, y=200)
 GlitterOn = tk.IntVar()
 GLCheckbox = tk.Checkbutton(onvalue=1, offvalue=0, variable=GlitterOn)
 GLCheckbox.place(x=20, y=240)
+SW = tk.IntVar()
+StartWait = tk.Checkbutton(onvalue=1, offvalue=0, variable=SW)
+StartWait.place(x=457, y=34)
 
 #Hotbar Slots
 SSlot = tk.Entry(width=2)
