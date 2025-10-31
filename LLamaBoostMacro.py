@@ -20,6 +20,8 @@ def start():
         print("MACRO STARTED")
         stinger()
         gumdrop()
+        jellybean()
+
 
 #Stop button
 def stop():
@@ -33,7 +35,6 @@ def stinger():
         return
     ss = SSlot.get()
     if running:
-        time.sleep(2)
         if StingerOn.get():
             pyautogui.press(ss)
             print("STINGER ACTIVATED")
@@ -45,19 +46,17 @@ def gumdrop():
         return
     gs = GSlot.get()
     if running:
-        time.sleep(2)
         if GumOn.get():
             pyautogui.press(gs)
             print("GUMDROP ACTIVATED")
         Main.after(2000, gumdrop)
 
 #Jellybeans
-def jellybean(): #DOES NOT WORK
+def jellybean():
     if not running:
         return
     js = JBSlot.get()
     if running:
-        time.sleep(2)
         if JellyOn.get():
             pyautogui.press(js)
             print("JELLYBEAN ACTIVATED")
