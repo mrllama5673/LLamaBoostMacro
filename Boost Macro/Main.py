@@ -180,5 +180,9 @@ StartButton.place(x=200, y=265)
 StopButton = tk.Button(text="Stop", command=stop)
 StopButton.place(x=260, y=265)
 
+#Hotkeys
+Main.bind("<F1>", lambda event: start())
+Main.bind("<F3>", lambda event: stop())
+
 #Loop
 Main.mainloop()
