@@ -35,5 +35,5 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    icon=['BasicBee.ico'],
+    icon=['C:\\Users\\mrlla\\Documents\\BasicBee.ico'],
 )
