@@ -17,6 +17,20 @@ def start():
     global running
     if not running:
         running = True
+        SCheckbox.configure(state="disabled")
+        GCheckbox.configure(state="disabled")
+        JBCheckbox.configure(state="disabled")
+        CCheckbox.configure(state="disabled")
+        CVCheckbox.configure(state="disabled")
+        GLCheckbox.configure(state="disabled")
+        SSlot.configure(state="disabled")
+        GSlot.configure(state="disabled")
+        JBSlot.configure(state="disabled")
+        CSlot.configure(state="disabled")
+        CVSlot.configure(state="disabled")
+        GLSlot.configure(state="disabled")
+        StartButton.configure(state="disabled")
+        Main.after(2000)
         print("MACRO STARTED")
         stinger()
         gumdrop()
@@ -29,6 +43,19 @@ def start():
 def stop():
     global running
     running = False
+    SCheckbox.configure(state="normal")
+    GCheckbox.configure(state="normal")
+    JBCheckbox.configure(state="normal")
+    CCheckbox.configure(state="normal")
+    CVCheckbox.configure(state="normal")
+    GLCheckbox.configure(state="normal")
+    SSlot.configure(state="normal")
+    GSlot.configure(state="normal")
+    JBSlot.configure(state="normal")
+    CSlot.configure(state="normal")
+    CVSlot.configure(state="normal")
+    GLSlot.configure(state="normal")
+    StartButton.configure(state="normal")
     print("MACRO STOPPED")
 
 #Stingers
