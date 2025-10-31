@@ -74,8 +74,8 @@ StopButton.place(x=260, y=265)
 #Macros
 def boost():
     while(True):
-        if SCheckbox.cget():
-            SCheckbox.configure(state='Enabled')
+        if StingerOn.get():
+            pyautogui.press(int(SSlot.get()))
 
 
 Main.mainloop()
